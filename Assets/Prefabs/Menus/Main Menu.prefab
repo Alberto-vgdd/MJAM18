@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &7178699399388919001 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7094634811929691572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6135554852393402771 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6111164196979159294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &396863124798931907
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,18 +49,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0}
---- !u!224 &6135554852393402771 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6111164196979159294}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &7178699399388919001 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7094634811929691572}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5082778178424213852
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6203277798386405447, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b54587b1250b8439b2f8ae90b7776f, type: 3}
 --- !u!1001 &7094634811929691572
@@ -215,6 +220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203277798386405447, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b54587b1250b8439b2f8ae90b7776f, type: 3}
