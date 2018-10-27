@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class InputManager : MonoBehaviour
 {
     // Singleton
@@ -13,13 +14,6 @@ public class InputManager : MonoBehaviour
     private const string Action = "Action";
     private const string Back = "Back";
     private const string Menu = "Menu";
-
-    public enum Player 
-    {
-        One,
-        Two,
-        Count
-    }
 
     void Awake()
     {
