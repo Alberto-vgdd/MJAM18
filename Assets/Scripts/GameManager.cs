@@ -24,11 +24,12 @@ public class GameManager : MonoBehaviour
 
 
     // Game Logic variables.
-    private int[] scores;
+    public int[] scores;
     private Minigame currentMinigame;
     private float minigameDuration;
     private List<int> playedMinigames;
     private int currentMinigameIndex;
+
 
     void Awake()
     {
@@ -56,27 +57,101 @@ public class GameManager : MonoBehaviour
     {
         // Reset the value of the variables
         for (int i = 0; i < scores.Length; i++) { scores[i] = 0;}
-        if (currentMinigame != null) { Destroy(currentMinigame.gameObject);}
         minigameDuration = initialMinigameDuration;
         playedMinigames.Clear();
+
+        // Hide the main menu.
+        MenuManager.HideMainMenu();
         
-
-
-        // UI Animation here.
-        currentMinigameIndex = GetRandomIndex();
+        // Load the next minigame.
+        StartCoroutine(MinigameTransition(Player.Count));
     }
 
+    void MinigameFinished(Player winner)
+    {
+        // Increse the overall score.
+        scores[(int)winner]++;
+
+        // Transition to the next minigame.
+        StartCoroutine(MinigameTransition(winner));
+    }
+
+    IEnumerator MinigameTransition(Player winner)
+    {
+        // If there was a previous minigame loaded.
+        if (!winner.Equals(Player.Count))
+        {
+            // Fade out the screen and wait one second.
+            MenuManager.FadeOut();
+            yield return new WaitForSeconds(1f);
+
+            // Print the player who the lat game and wait 2 seconds.
+            MenuManager.DisplayWinner(currentMinigame.winMessages[(int)winner]);
+            yield return new WaitForSeconds(2f);
+        }
+
+        // Load the next minigame, and wait for a second.
+        currentMinigameIndex = GetRandomIndex();
+
+        // If all the levels have been played...
+        if (currentMinigameIndex < 0)
+        {
+            // Display the summary screen.
+            MenuManager.DisplaySummary(scores);
+            yield return new WaitForSeconds(8.5f);
+
+            // Load the next minigame, and wait for a second.
+            currentMinigameIndex = GetRandomIndex();
+        }
+ 
+
+        currentMinigame = Instantiate(minigames[currentMinigameIndex]);
+        yield return new WaitForSeconds(1f);
+
+        // Display the new minigame's messages and wait 2 seconds.
+        MenuManager.DisplayMessage(currentMinigame.hintMessages);
+        yield return new WaitForSeconds(2f);
+
+        // Fade the game in and wait half a second.
+        MenuManager.FadeIn();
+        yield return new WaitForSeconds(0.5f);
+
+        // Finally, start the level and stop the coroutine.
+        currentMinigame.StartMinigame();
+        yield return null;
+    }
+
+    // This auxiliary function provides a random int pointing to one the unplayed minigames
     int GetRandomIndex()
     {
         int index = -1;
         if (playedMinigames.Count < minigames.Length)
         {
-            
+            bool indexAvailable = false;
+            while (!indexAvailable)
+            {
+                index = Random.Range(0,minigames.Length);
+                indexAvailable = true;
+
+                foreach (int playedMinigame in playedMinigames)
+                {
+                    if (playedMinigame.Equals(index))
+                    {
+                        indexAvailable = false;
+                    }
+                }
+            }
+            playedMinigames.Add(index);
         }
-        return 0;
+        else
+        {
+            playedMinigames.Clear();
+        }
+        return index;
     }
 
-
+    public static float MinigameDuration { get => instance.minigameDuration; }
 
     public static void StartPressed(){ instance.StartGame(); }
+    public static void FinishMinigame(Player winner){ instance.MinigameFinished(winner); }
 }

@@ -4,19 +4,47 @@ using UnityEngine;
 
 public abstract class Minigame : MonoBehaviour
 {
-    public abstract void MinigameStart();
-    public abstract void MinigamePause();
-    public abstract void MinigameResume();
-    public abstract void MinigameStop();
+    [Header("Player who wins if the time runs out.")]
+    public Player defaultWinner;
 
+    [Header("Strings to be displayed.")]
+    public string[] hintMessages;
+    public string[] winMessages;
+
+
+    protected bool minigameEnabled;
+    protected float duration;
+    protected float timer;
+
+    public abstract void StartMinigame();
+    public abstract void FinishMinigame(Player winner);
 }
 
 public abstract class Minigame<T> : Minigame where T : Minigame<T>
 {
-    public static T Instance { get; private set; }
-
-    public virtual void Awake()
+    public override void StartMinigame()
     {
-        Instance = (T)this;
+        duration = GameManager.MinigameDuration;
+        timer = 0;
+        minigameEnabled = true;
+    }
+
+    public override void FinishMinigame(Player winner)
+    {
+        minigameEnabled = false;
+        GameManager.FinishMinigame(winner);
+        Destroy(gameObject,2f);
+    }
+
+    public virtual void Update()
+    {
+        if (minigameEnabled)
+        {
+            timer += Time.deltaTime;
+            if (timer >= duration)
+            {
+                FinishMinigame(defaultWinner);
+            }
+        }
     }
 }
