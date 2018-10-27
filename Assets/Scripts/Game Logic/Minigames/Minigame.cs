@@ -13,10 +13,10 @@ public abstract class Minigame : MonoBehaviour
 
 public abstract class Minigame<T> : Minigame where T : Minigame<T>
 {
-    public static T Instance { get; private set; }
+    private float duration;
 
-    public virtual void Awake()
+    public virtual void Start()
     {
-        Instance = (T)this;
+        duration = GameManager.MinigameDuration;
     }
 }

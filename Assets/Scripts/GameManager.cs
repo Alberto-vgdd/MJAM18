@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private List<int> playedMinigames;
     private int currentMinigameIndex;
 
+
     void Awake()
     {
         // Create the singleton object.
@@ -56,27 +57,42 @@ public class GameManager : MonoBehaviour
     {
         // Reset the value of the variables
         for (int i = 0; i < scores.Length; i++) { scores[i] = 0;}
-        if (currentMinigame != null) { Destroy(currentMinigame.gameObject);}
         minigameDuration = initialMinigameDuration;
         playedMinigames.Clear();
         
 
-
         // UI Animation here.
+        if (currentMinigame != null) { Destroy(currentMinigame.gameObject);}
         currentMinigameIndex = GetRandomIndex();
+        currentMinigame = Instantiate(minigames[currentMinigameIndex]);
     }
 
+    // This auxiliary function provides a random int pointing to one the unplayed minigames
     int GetRandomIndex()
     {
         int index = -1;
         if (playedMinigames.Count < minigames.Length)
         {
-            
+            bool indexAvailable = false;
+            while (!indexAvailable)
+            {
+                index = Random.Range(0,minigames.Length);
+                indexAvailable = true;
+
+                foreach (int playedMinigame in playedMinigames)
+                {
+                    if (playedMinigame.Equals(index))
+                    {
+                        indexAvailable = false;
+                    }
+                }
+            }
+            playedMinigames.Add(index);
         }
-        return 0;
+        return index;
     }
 
-
+    public static float MinigameDuration { get => instance.minigameDuration; }
 
     public static void StartPressed(){ instance.StartGame(); }
 }
