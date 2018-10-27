@@ -11,6 +11,8 @@ public class HorseMovement : MonoBehaviour
 
     public float numAvancePlayer1;
     public float numRetrocesoPlayer2;
+    public bool action0;
+    public bool action1;
 
     // Start is called before the first frame update
     void Start()
@@ -20,15 +22,17 @@ public class HorseMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-        horse.transform.position += new Vector3(0, Mathf.Sin(Time.time) * velocidadHorse * amplitudHorse, 0);
+        action0 = InputManager.GetAction(Player.One);
+        action1 = InputManager.GetAction(Player.Two);
+        //horse.transform.position += new Vector3(0, Mathf.Sin(Time.time) * velocidadHorse * amplitudHorse, 0);
 
-        if (InputManager.GetActionDown(InputManager.Player.One)) {
+        if (action0) {
             horse.transform.position += new Vector3(numAvancePlayer1, 0, 0);
         }
 
-        if (InputManager.GetActionDown(InputManager.Player.Two))
+        if (action1)
         {
-            horse.transform.position += new Vector3(-numRetrocesoPlayer2, 0, 0);
+            horse.transform.position -= new Vector3(numRetrocesoPlayer2, 0, 0);
         }
     }
 }
