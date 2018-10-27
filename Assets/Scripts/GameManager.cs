@@ -68,6 +68,11 @@ public class GameManager : MonoBehaviour
 
     int GetRandomIndex()
     {
+        int index = -1;
+        if (playedMinigames.Count < minigames.Length)
+        {
+            
+        }
         return 0;
     }
 
