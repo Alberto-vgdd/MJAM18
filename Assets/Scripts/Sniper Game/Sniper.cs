@@ -19,7 +19,7 @@ public class Sniper : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //MOVIMIENTO PELOTA PLAYER 1
         ballPlayer1.GetComponent<Rigidbody>().velocity = new Vector3(InputManager.GetHorizontalAxis(Player.One) * speedBall, ballPlayer1.GetComponent<Rigidbody>().velocity.y, InputManager.GetVerticalAxis(Player.One) * speedBall);
@@ -35,3 +35,4 @@ public class Sniper : MonoBehaviour
         sniperPlayer2.GetComponent<Rigidbody>().velocity = new Vector3(InputManager.GetHorizontalAxis(Player.Two) * speedSniper, InputManager.GetVerticalAxis(Player.Two) * speedSniper,0);
     }
 }
+    
