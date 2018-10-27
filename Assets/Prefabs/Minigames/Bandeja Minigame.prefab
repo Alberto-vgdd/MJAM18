@@ -4961,7 +4961,7 @@ ParticleSystemRenderer:
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300004, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -5213,52 +5213,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 6033703071449936982}
     m_Modifications:
     - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_Name
-      value: egg
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
       propertyPath: m_LocalScale.x
@@ -5272,6 +5228,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.70421
       objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d10489283ec588e4393ecadcaceecfd6, type: 2}
     - target: {fileID: 2300004, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5285,10 +5245,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: d10489283ec588e4393ecadcaceecfd6, type: 2}
     - target: {fileID: 2300010, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d10489283ec588e4393ecadcaceecfd6, type: 2}
-    - target: {fileID: 2300002, guid: fedc3f37c50799741b8da16cece6d5f4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d10489283ec588e4393ecadcaceecfd6, type: 2}

@@ -23,6 +23,7 @@ public class BandejaGame : MonoBehaviour
 
         //MOVIMIENTO BANDEJA PLAYER 2
         badejaPlayer2.transform.rotation *= Quaternion.Euler(0, 0, -InputManager.GetHorizontalAxis(Player.Two) * speedBandeja * Time.fixedDeltaTime);
+        
         /*
         if (badejaPlayer2.transform.rotation.z <= 0.40 && badejaPlayer2.transform.rotation.z >= -0.40)
         {
@@ -40,4 +41,11 @@ public class BandejaGame : MonoBehaviour
         */
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            //AÑADIR TRANSICION (COMO LA ESPAÑOLA)
+        }
+    }
 }
