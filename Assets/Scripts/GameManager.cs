@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private float minigameDuration;
     private List<int> playedMinigames;
     private int currentMinigameIndex;
+    private Coroutine minigameLoad;
 
 
     void Awake()
@@ -60,11 +61,34 @@ public class GameManager : MonoBehaviour
         minigameDuration = initialMinigameDuration;
         playedMinigames.Clear();
         
+        // Hide the main menu
+        MenuManager.HideMainMenu();
 
-        // UI Animation here.
-        if (currentMinigame != null) { Destroy(currentMinigame.gameObject);}
-        currentMinigameIndex = GetRandomIndex();
-        currentMinigame = Instantiate(minigames[currentMinigameIndex]);
+        // Load the next minigame.
+        minigameLoad = StartCoroutine(LoadMinigame());
+    }
+
+    IEnumerator LoadMinigame()
+    {
+        // Load the next minigame.
+        //currentMinigameIndex = GetRandomIndex();
+        //currentMinigame = Instantiate(minigames[currentMinigameIndex]);
+
+        // Wait for a second, and display the current objectives.
+        yield return new WaitForSeconds(1f);
+        MenuManager.DisplayMessage();
+
+        // Wait for another two second, and fade the game in.
+        yield return new WaitForSeconds(2f);
+        MenuManager.FadeIn();
+
+        // Wait for half a second and start the minigame.
+        yield return new WaitForSeconds(0.5f);
+        //currentMinigame.StartGame
+
+
+        
+        yield return null;
     }
 
     // This auxiliary function provides a random int pointing to one the unplayed minigames
