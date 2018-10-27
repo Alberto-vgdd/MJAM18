@@ -10,46 +10,21 @@ public class PongManager : MonoBehaviour
     public float speedP1;
     public float speedP2;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
 
         //MOVIMIENTO PALA PLAYER 1
-        if (InputManager.GetVerticalAxis(Player.One) < 0)
-        {
-            palaPlayer1.transform.position -= new Vector3(0, speedP1, 0);
-        }
-        else if (InputManager.GetVerticalAxis(Player.One) > 0)
-        {
-            palaPlayer1.transform.position += new Vector3(0, speedP1, 0);
-        }
+        palaPlayer1.GetComponent<Rigidbody2D>().velocity = new Vector2(0, InputManager.GetVerticalAxis(Player.One) * speedP1);
 
         //MOVIMIENTO PELOTA PLAYER 2
-        if (InputManager.GetHorizontalAxis(Player.Two) < 0)
-        {
-            ballPlayer2.transform.position -= new Vector3(speedP2, 0, 0);
-        }
+        ballPlayer2.GetComponent<Rigidbody2D>().velocity = new Vector2(InputManager.GetHorizontalAxis(Player.Two) * speedP2, InputManager.GetVerticalAxis(Player.Two) * speedP2);
+    }
 
-        else if (InputManager.GetHorizontalAxis(Player.Two) > 0)
-        {
-            ballPlayer2.transform.position += new Vector3(speedP2, 0, 0);
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player") {
+            //SE LLAMA A TRANSICIÓN
         }
-
-        if (InputManager.GetVerticalAxis(Player.Two) < 0)
-        {
-            ballPlayer2.transform.position -= new Vector3(0, speedP2, 0);
-        }
-
-        else if (InputManager.GetVerticalAxis(Player.Two) > 0)
-        {
-            ballPlayer2.transform.position += new Vector3(0, speedP2, 0);
-        }
-
     }
 }
