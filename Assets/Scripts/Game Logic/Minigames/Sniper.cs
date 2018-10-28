@@ -48,29 +48,32 @@ public class Sniper : Minigame<Sniper>
         base.Update();
 
 
-        
-        if (!shootAvailable)
+        if (minigameEnabled)
         {
-            recoveryTimer += Time.deltaTime;
-            if (recoveryTimer >= recoveryTime)
+            if (!shootAvailable)
             {
-                shootAvailable = true;
+                recoveryTimer += Time.deltaTime;
+                if (recoveryTimer >= recoveryTime)
+                {
+                    shootAvailable = true;
+                }
             }
-        }
 
-        if (InputManager.GetActionDown(Player.Two))
-        {
-            if (shootAvailable)
+            if (InputManager.GetActionDown(Player.Two))
             {
-                shooting = true;
-                shootAvailable = false;
-            }
-            else
-            {
-                // Play shoot unavailable.
-                fx.PlayOneShot(reloading);
+                if (shootAvailable)
+                {
+                    shooting = true;
+                    shootAvailable = false;
+                }
+                else
+                {
+                    // Play shoot unavailable.
+                    fx.PlayOneShot(reloading);
+                }
             }
         }
+        
 
     }
 
