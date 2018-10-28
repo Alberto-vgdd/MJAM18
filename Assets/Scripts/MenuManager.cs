@@ -44,7 +44,7 @@ public class MenuManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
 
 
         // Get the different components
