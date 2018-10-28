@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Sniper : Minigame<Sniper>
 {
-    private const float recoveryTime = 1f;
+    private const float recoveryTime = 1.5f;
 
     [Header("Sniper Parameters.")]
     public Rigidbody ballPlayer1;
     public Rigidbody sniperPlayer2;
     public Transform scope;
+    public ParticleSystem confeti;
     public float speedBall;
     public float jumpBall;
     public float speedSniper;
+
+    public AudioSource fx;
+    public AudioClip shot;
+    public AudioClip kids;
+    public AudioClip ballon;
+    public AudioClip reloading;
 
     private bool puedeSaltar;
 
@@ -20,6 +27,7 @@ public class Sniper : Minigame<Sniper>
     private bool shooting;
     private bool shootAvailable;
     private float recoveryTimer;
+
 
     public override void StartMinigame()
     {
@@ -60,6 +68,7 @@ public class Sniper : Minigame<Sniper>
             else
             {
                 // Play shoot unavailable.
+                fx.PlayOneShot(reloading);
             }
         }
 
@@ -92,13 +101,13 @@ public class Sniper : Minigame<Sniper>
                 Vector3 direction = scope.position - origin;
 
                 RaycastHit[] raycastHits = Physics.RaycastAll(origin,direction.normalized,1000f,LayerMask.GetMask("Balloon"));
-                Debug.Log(raycastHits.Length);
                 if (raycastHits.Length > 0)
                 {
                     foreach(RaycastHit hit in raycastHits)
                     {
                         hit.transform.gameObject.SetActive(false);
-                        // Play confeti.
+
+                        Instantiate(confeti,hit.transform.position, confeti.transform.rotation );
 
                         if (hit.transform.tag.Equals("Player"))
                         {
@@ -107,10 +116,12 @@ public class Sniper : Minigame<Sniper>
                     }
 
                     // Play ballon pop sound
+                    fx.PlayOneShot(ballon);
                 }
                 else
                 {
                     // Play shoot.
+                    fx.PlayOneShot(shot);
                 }
                 
 
@@ -118,6 +129,15 @@ public class Sniper : Minigame<Sniper>
                 recoveryTimer = 0f;
             }
         }
+    }
+
+    public override void FinishMinigame(Player winner)
+    {
+        if (winner.Equals(Player.One))
+        {
+           fx.PlayOneShot(kids);
+        }
+        base.FinishMinigame(winner);
     }
 }
     

@@ -44,6 +44,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigames:
-  - {fileID: 8928832845874466551, guid: 6feb2e3d8a6cfc345b5f5491ea31d502, type: 3}
+  - {fileID: 2426814754115988792, guid: 6feb2e3d8a6cfc345b5f5491ea31d502, type: 3}
   - {fileID: 7735084646585413643, guid: de03388558f314048b37a070f04347a6, type: 3}
+  - {fileID: 4946520099617308298, guid: c7907eea5c26d8c43a08a03d8e0468c2, type: 3}
   scores: 
+  music: {fileID: 0}
+  title: {fileID: 8300000, guid: 02209958e1104d74691726ed90bcba8a, type: 3}
+  minigame: {fileID: 8300000, guid: d6811d89d715fc84283f19ea57aeb735, type: 3}
+  summary: {fileID: 8300000, guid: 7553f01c44be31149a0738007b9f487c, type: 3}
+  transitions:
+  - {fileID: 8300000, guid: 3abdb341411b9fe4780057a7e966bc3c, type: 3}
+  - {fileID: 8300000, guid: 099e23c9372295b4faced575d90448e8, type: 3}
+  - {fileID: 8300000, guid: 3db361126513f8e40a89ad4e6c5adc7a, type: 3}
+  - {fileID: 8300000, guid: 5563c29e9df85e94796d809e92167665, type: 3}
+  - {fileID: 8300000, guid: 13168ee44e248f64b9b5c9600047fa38, type: 3}
