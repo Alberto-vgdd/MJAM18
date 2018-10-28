@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
         }
  
 
-        currentMinigame = Instantiate(minigames[currentMinigameIndex]);
+        currentMinigame = Instantiate(minigames[currentMinigameIndex],minigames[currentMinigameIndex].transform.position,minigames[currentMinigameIndex].transform.rotation);
         yield return new WaitForSeconds(1f);
 
         // Display the new minigame's messages and wait 2 seconds.
