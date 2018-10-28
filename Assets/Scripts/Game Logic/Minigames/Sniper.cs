@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sniper : Minigame<Sniper>
 {
-    private const float recoveryTime = 2.5f;
+    private const float recoveryTime = 1.5f;
 
     [Header("Sniper Parameters.")]
     public Rigidbody ballPlayer1;
@@ -101,7 +101,6 @@ public class Sniper : Minigame<Sniper>
                 Vector3 direction = scope.position - origin;
 
                 RaycastHit[] raycastHits = Physics.RaycastAll(origin,direction.normalized,1000f,LayerMask.GetMask("Balloon"));
-                Debug.Log(raycastHits.Length);
                 if (raycastHits.Length > 0)
                 {
                     foreach(RaycastHit hit in raycastHits)

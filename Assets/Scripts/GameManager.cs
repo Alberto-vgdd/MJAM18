@@ -31,6 +31,13 @@ public class GameManager : MonoBehaviour
     private int currentMinigameIndex;
 
 
+    public AudioSource music;
+    public AudioClip title;
+    public AudioClip minigame;
+    public AudioClip summary;
+    public AudioClip[] transitions;
+
+
     void Awake()
     {
         // Create the singleton object.
@@ -50,6 +57,10 @@ public class GameManager : MonoBehaviour
         // Initialize the variables.
         scores = new int[(int)Player.Count];
         playedMinigames = new List<int>();
+
+        // Play menu music
+        music.clip = title;
+        music.Play();
     }
 
     // The beginning of the game.
@@ -83,11 +94,21 @@ public class GameManager : MonoBehaviour
         {
             // Fade out the screen and wait one second.
             MenuManager.FadeOut();
+            music.PlayOneShot(transitions[Random.Range(0,transitions.Length)]);
             yield return new WaitForSeconds(1f);
 
             // Print the player who the lat game and wait 2 seconds.
             MenuManager.DisplayWinner(currentMinigame.winMessages[(int)winner]);
             yield return new WaitForSeconds(2f);
+        }
+        else
+        {
+            // Wait 7.5 seconds to show the tutorial
+            yield return new WaitForSeconds(5f);
+
+            // Play minigame music
+            music.clip = minigame;
+            music.Play();
         }
 
         // Load the next minigame, and wait for a second.
@@ -96,9 +117,17 @@ public class GameManager : MonoBehaviour
         // If all the levels have been played...
         if (currentMinigameIndex < 0)
         {
+            // Play menu music
+            music.clip = summary;
+            music.Play();
+
             // Display the summary screen.
             MenuManager.DisplaySummary(scores);
             yield return new WaitForSeconds(8.5f);
+
+            // Play minigame music
+            music.clip = minigame;
+            music.Play();
 
             // Load the next minigame, and wait for a second.
             currentMinigameIndex = GetRandomIndex();

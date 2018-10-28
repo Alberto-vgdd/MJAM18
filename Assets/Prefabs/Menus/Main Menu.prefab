@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!224 &7178699399388919001 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7094634811929691572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6135554852393402771 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6111164196979159294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &396863124798931907
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,23 +44,92 @@ RectTransform:
   m_Father: {fileID: 348257944179034629}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -50, y: 0}
   m_SizeDelta: {x: 500, y: 300}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!224 &6135554852393402771 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6111164196979159294}
+  m_Pivot: {x: 1, y: 0}
+--- !u!1 &1472752023693492070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &7178699399388919001 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6889258227800854121}
+  - component: {fileID: 7838123779341994301}
+  - component: {fileID: 1611841261505388338}
+  m_Layer: 5
+  m_Name: Credits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6889258227800854121
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 138179835361128813, guid: 49b54587b1250b8439b2f8ae90b7776f,
-    type: 3}
-  m_PrefabInstance: {fileID: 7094634811929691572}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472752023693492070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 348257944179034629}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 0}
+  m_SizeDelta: {x: 600, y: 150}
+  m_Pivot: {x: 0, y: 0}
+--- !u!222 &7838123779341994301
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472752023693492070}
+  m_CullTransparentMesh: 0
+--- !u!114 &1611841261505388338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472752023693492070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c5b0cf408be39f849945036b7269f00c, type: 3}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'ALBERTO GOMEZ
+
+    SALVADOR MARHUENDA'
 --- !u!1 &5082778178424213852
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +159,7 @@ RectTransform:
   m_Children:
   - {fileID: 8037286706312140396}
   - {fileID: 522319765621776797}
+  - {fileID: 6889258227800854121}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,11 +200,11 @@ RectTransform:
   m_Father: {fileID: 348257944179034629}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -17}
-  m_SizeDelta: {x: 1000, y: 450}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: 200}
+  m_SizeDelta: {x: 750, y: 750}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &1933848655059555947
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -202,6 +284,21 @@ PrefabInstance:
       propertyPath: m_Text
       value: SALIR
       objectReference: {fileID: 0}
+    - target: {fileID: 4679733008570338286, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679733008570338286, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679733008570338286, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b54587b1250b8439b2f8ae90b7776f, type: 3}
 --- !u!1001 &7094634811929691572
@@ -235,6 +332,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: JUGAR
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679733008570338286, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679733008570338286, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679733008570338286, guid: 49b54587b1250b8439b2f8ae90b7776f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b54587b1250b8439b2f8ae90b7776f, type: 3}
