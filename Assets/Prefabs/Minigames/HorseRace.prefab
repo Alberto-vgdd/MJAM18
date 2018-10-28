@@ -130,7 +130,7 @@ MonoBehaviour:
   - Galopa
   - Frena
   winMessages:
-  - Quien va como el rayo?       El caballo
+  - Quien va como el rayo?                        El caballo
   - Has perdido las riendas
   horse: {fileID: 6006223396160286821}
   velocidadHorse: 0.1
