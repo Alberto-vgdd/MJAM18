@@ -9,6 +9,7 @@ public class HorseRace : Minigame<HorseRace>
     public Transform horse;
     public float velocidadHorse;
     public float amplitudHorse;
+    public AudioSource audioSource;
 
     public float numAvancePlayer1;
     public float numRetrocesoPlayer2;
@@ -54,6 +55,14 @@ public class HorseRace : Minigame<HorseRace>
             }
         }   
         
+    }
+
+
+    public  override void FinishMinigame(Player winner)
+    {
+        base.FinishMinigame(winner);
+
+        audioSource.Play();
     }
 
     

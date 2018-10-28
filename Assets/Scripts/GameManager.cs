@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 
         // Play menu music
         music.clip = title;
+        music.loop = true;
         music.Play();
     }
 
@@ -104,10 +105,11 @@ public class GameManager : MonoBehaviour
         else
         {
             // Wait 7.5 seconds to show the tutorial
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(7.5f);
 
             // Play minigame music
             music.clip = minigame;
+            music.loop = true;
             music.Play();
         }
 
@@ -119,11 +121,13 @@ public class GameManager : MonoBehaviour
         {
             // Play menu music
             music.clip = summary;
+            music.loop = false;
             music.Play();
 
             // Display the summary screen.
             MenuManager.DisplaySummary(scores);
             yield return new WaitForSeconds(8.5f);
+            for (int i = 0; i < scores.Length; i++) { scores[i] = 0;}
 
             // Play minigame music
             music.clip = minigame;
