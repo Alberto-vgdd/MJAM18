@@ -270,6 +270,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1259858780521362424, guid: 05ba34c0f588bd94db095d9021606739,
+        type: 3}
+      propertyPath: minigames.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1259858780521362431, guid: 05ba34c0f588bd94db095d9021606739,
         type: 3}
       propertyPath: m_LocalPosition.x
