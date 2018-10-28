@@ -330,12 +330,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1259858780521362424, guid: 05ba34c0f588bd94db095d9021606739,
-        type: 3}
-      propertyPath: minigames.Array.data[1]
-      value: 
-      objectReference: {fileID: 7735084646585413643, guid: de03388558f314048b37a070f04347a6,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ba34c0f588bd94db095d9021606739, type: 3}
 --- !u!1001 &4245860651212522172
