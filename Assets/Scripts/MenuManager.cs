@@ -25,7 +25,9 @@ public class MenuManager : MonoBehaviour
 
     // Summary variables
     private const string displaySummary = "Display Summary";
-    public Text score;
+    public GameObject[] crowns;
+    public Text player0score;
+    public Text player1score;
 
     
     // Components
@@ -96,7 +98,10 @@ public class MenuManager : MonoBehaviour
     // Summary 
     public static void DisplaySummary(int[] scores)
     {
-        instance.score.text = "HEROE: " + scores[0] + "\nVILLANO: " + scores[1];
+        instance.crowns[0].SetActive(scores[0] > scores[1]);
+        instance.crowns[1].SetActive(scores[1] > scores[0]);
+        instance.player0score.text = "HEROE: " + scores[0];
+        instance.player1score.text = "VILLANO: " + scores[1];
         instance.animator.SetTrigger(displaySummary);
     }
 

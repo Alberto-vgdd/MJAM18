@@ -10,6 +10,7 @@ public class DeathRun : Minigame<DeathRun>
     public float speedCuchillos;
     public KitchenPlayer player;
 
+
     // Update is called once per frame
     public override void Update()
     {
