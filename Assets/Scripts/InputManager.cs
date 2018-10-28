@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
 
     // Inputs for the movement axes.
@@ -76,7 +76,7 @@ public class InputManager : MonoBehaviour
     {
         return Input.GetButtonUp(Menu+(int)player);
     }
-    public static bool GetMenuBack(Player player)
+    public static bool GetMenu(Player player)
     {
         return Input.GetButton(Menu+(int)player);
     }

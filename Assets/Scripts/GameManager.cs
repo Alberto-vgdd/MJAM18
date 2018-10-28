@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -49,7 +50,25 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
+    }
+
+    void Update()
+    {
+        if (InputManager.GetMenuDown(Player.One)  || InputManager.GetMenuDown(Player.Two))
+        {
+            if (!(currentMinigame is HorseRace))
+            {
+                Time.timeScale = 1 - Time.timeScale;
+
+            }
+        }
+
+        if (InputManager.GetBack(Player.One)  || InputManager.GetBack(Player.Two))
+        {
+            Time.timeScale = 1 ;
+            SceneManager.LoadScene(0);
+        }
     }
 
     void Start()
